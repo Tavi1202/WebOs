@@ -3,11 +3,14 @@
 
   <body style="background-image: url('./Photos/Lego Background.webp'); font-family: 'Trebuchet MS', sans-serif; margin: 0">
 
-    <div style="display: flex; justify-content: space-around; background-color: #363636; Opacity: 97.5%">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #7c7c7c; opacity: 0.975;">
 
-      <p> Octavius's OS</p>
+      <p style="margin: 0; font-size: 1.0rem;">Octavius's OS</p>
 
-      <p>7/23/2026 3:03 PM</p>
+      <div style="text-align: right;">
+        <p id="dateElement" style="margin: 0; line-height: 1.2;"></p>
+        <p id="timeElement" style="margin: 0; line-height: 1.2;"></p>
+      </div>
     </div>
 
     <div style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 8px; border: solid; width:fit-content; border-radius: 32px; background-color: #8cdcf7; text-align: center">
@@ -27,6 +30,16 @@
       <a href="https://www.lego.com/en-us">Lego Website</a>
 
     </div>
+
+    <script>
+
+      setInterval(function () {
+       const now = new Date();
+       document.querySelector("#timeElement").innerHTML = now.toLocaleTimeString();
+        document.querySelector("#dateElement").innerHTML = now.toLocaleDateString();
+      }, 1000);
+
+   </script>
 
   </body>
 
